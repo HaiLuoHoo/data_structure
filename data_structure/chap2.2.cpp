@@ -58,6 +58,17 @@ bool ListDelete(SqList &L, int i, int &e)
 	return true;
 }
 
+//基本操作——按值查询
+int LocateElem(SqList L, int e)
+{
+	for (int i = 0; i < L.length; i++)
+	{
+		if (L.data[i] == e)
+			return i + 1;
+	}
+	return 0;
+}
+
 //基本操作——输出操作
 void PrintList(SqList L)
 {

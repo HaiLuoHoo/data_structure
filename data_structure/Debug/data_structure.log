@@ -1,2 +1,6 @@
-﻿  chap2.2.cpp
-  data_structure.vcxproj -> D:\cppProjects\data_structure\Debug\data_structure.exe
+﻿  chap2.3.cpp
+D:\cppProjects\data_structure\data_structure\chap2.3.cpp(9,7): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+D:\cppProjects\data_structure\data_structure\chap2.3.cpp(9,7): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+D:\cppProjects\data_structure\data_structure\chap2.3.cpp(9,13): error C2238: 意外的标记位于“;”之前
+D:\cppProjects\data_structure\data_structure\chap2.3.cpp(16,5): error C2039: "next": 不是 "LNode" 的成员
+D:\cppProjects\data_structure\data_structure\chap2.3.cpp(7): message : 参见“LNode”的声明
