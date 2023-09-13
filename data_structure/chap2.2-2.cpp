@@ -23,6 +23,7 @@ void InitList(SqList& L)
 	}
 }
 
+//基本操作——销毁一个顺序表
 void DestroyList(SqList& L)
 {
 	delete[] L.data;
@@ -30,12 +31,55 @@ void DestroyList(SqList& L)
 	L.maxSize = 0;
 }
 
+//基本操作——插入操作
+bool ListInsert(SqList& L, int i, int e)
+{
+	if (i<1 || i>L.length+1)
+	{
+		return false;
+	}
+	if (L.length >= L.maxSize)
+	{
+		return false;
+	}
+	for (int j = L.length; j >= i; j--)
+	{
+		L.data[j] = L.data[j - 1];
+	}
+	L.data[i - 1] = e;
+	L.length++;
+	return true;
+}
+
+//基本操作——删除操作
+bool ListDelete(SqList& L, int i, int& e)
+{
+	if (i<1 || i>L.length)
+	{
+		return false;
+	}
+	e = L.data[i - 1];
+	for (int j = i; j <= L.length - 1; j++)
+	{
+		L.data[j - 1] = L.data[j];
+	}
+	L.data--;
+	return true;
+}
+
 //基本操作——输出操作
 void PrintList(SqList L)
 {
 	for (int i = 0; i < L.length; i++)
 	{
-		cout << L.data[i] << endl;
+		if (i == L.length - 1)
+		{
+			cout << L.data[i] << endl;
+		}
+		else
+		{
+			cout << L.data[i] << " ";
+		}
 	}
 }
 

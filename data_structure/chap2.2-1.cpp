@@ -1,6 +1,7 @@
 //2.2 线性表的顺序表示 - 静态分配
 
-#include <stdio.h>
+using namespace std;
+#include<iostream>
 #define MaxSize 10
 
 //静态表
@@ -42,7 +43,7 @@ bool ListDelete(SqList &L, int i, int &e)
 	if (i<1 || i>L.length)
 		return false;
 	e = L.data[i - 1];
-	for (int j = i; j <= L.length; j++)
+	for (int j = i; j <= L.length - 1; j++)
 	{
 		L.data[j - 1] = L.data[j];
 	}
@@ -66,7 +67,14 @@ void PrintList(SqList L)
 {
 	for (int i = 0; i < L.length; i++)
 	{
-		printf("%d ", L.data[i]);
+		if (i == L.length - 1)
+		{
+			cout << L.data[i] << endl;
+		}
+		else
+		{
+			cout << L.data[i] << " ";
+		}
 	}
 }
 
@@ -76,8 +84,12 @@ int main()
 	InitList(L);
 	ListInsert(L, 1, 1);
 	ListInsert(L, 1, 2);
+	ListInsert(L, 1, 3);
+	cout << "打印顺序表：";
+	PrintList(L);
 	int e;
-	ListDelete(L, 1, e);
-	printf("%d\n", e);
+	ListDelete(L, 3, e);
+	cout << "删除第3个数据元素：" << e << endl;
+	cout << "打印顺序表：";
 	PrintList(L);
 }
